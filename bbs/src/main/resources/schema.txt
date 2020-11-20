@@ -1,0 +1,5 @@
+-- schema.sql : DOL 명령문이 저장된 file
+-- dara.sql : dml 명령문이 저장된 file
+-- 이 두개의 파일이 src/main/resour
+
+select '여기는 schema.sql';
