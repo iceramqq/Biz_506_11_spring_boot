@@ -5,12 +5,13 @@ import com.biz.book.service.BookService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value="/api")
 public class BookApiController {
 
     @Qualifier("bookServiceV1")
@@ -20,9 +21,11 @@ public class BookApiController {
         this.bService = bService;
     }
 
-    @RequestMapping(value="/list",method = RequestMethod.GET)
-    public List<BookVO> getList(){
+    @RequestMapping(value="/list",method= RequestMethod.GET)
+    public List<BookVO> getList() {
+
         List<BookVO> bookList = bService.selelecAll();
         return bookList;
     }
+
 }

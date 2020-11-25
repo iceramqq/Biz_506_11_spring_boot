@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Builder
 
@@ -17,8 +17,11 @@ public class BookVO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",columnDefinition = "BIGINT")
+    @Column(name="id",columnDefinition = "BIGINT")
     private Long id;
+
+    @Column(name="str_name")
+    private String strName;
 
     @Column(columnDefinition = "VARCHAR(125)")
     private String title;
@@ -31,4 +34,5 @@ public class BookVO {
 
     @Column(nullable = true)
     private int price;
+
 }
